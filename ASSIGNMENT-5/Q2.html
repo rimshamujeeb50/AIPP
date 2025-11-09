@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Loan Approval System</h2>
+    <input type="text" id="name" placeholder="Applicant Name" required>
+    <select id="gender">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+    <input type="number" id="creditScore" placeholder="Credit Score" required>
+    <input type="number" id="salary" placeholder="Salary Amount" required>
+    <input type="number" id="loanAmount" placeholder="Loan Amount" required>
+    <button onclick="checkLoanApproval()">Check Approval</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function checkLoanApproval() {
+        const name = document.getElementById('name').value;
+        const gender = document.getElementById('gender').value;
+        const creditScore = parseInt(document.getElementById('creditScore').value);
+        const salary = parseInt(document.getElementById('salary').value);
+        const loanAmount = parseInt(document.getElementById('loanAmount').value);
+        const resultDiv = document.getElementById('result');
+
+        let approvalStatus = "Loan Denied";
+        if (creditScore >= 700 && salary >= loanAmount * 0.5) {
+            approvalStatus = "Loan Approved";
+        }
+
+        resultDiv.innerText = `${name} (${gender}): ${approvalStatus}`;
+    }
+</script>
+
+</body>
+</html>
