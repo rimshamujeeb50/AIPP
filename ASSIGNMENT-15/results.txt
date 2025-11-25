@@ -1,0 +1,3 @@
+{"city": "Delhi", "temperature": 15.05, "humidity": 67, "weather": "Haze", "time": "2025-11-25 22:58:48.174170"}
+{"city": "Delhi", "temperature": 15.05, "humidity": 67, "weather": "Haze", "time": "2025-11-25 22:59:08.086457"}
+{"city": "London", "temperature": 5.86, "humidity": 83, "weather": "Broken Clouds"}
